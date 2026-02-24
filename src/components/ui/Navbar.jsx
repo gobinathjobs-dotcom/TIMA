@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { ChevronDown, Search, Headphones, Sun, Menu, X, ArrowDown } from 'lucide-react'
+import { motion } from 'framer-motion'
 import defaultLogo from '../../assets/tima-logo.png'
 import scrolledLogo from '../../assets/Logo1.png'
 
@@ -60,23 +61,26 @@ export function Navbar() {
     }
 
     return (
-        <nav
+        <motion.nav
+            initial={{ y: 0, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 2.0, delay: 0.2, ease: "easeInOut" }}
             ref={navRef}
-            className={`fixed top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300 ${isScrolled
-                ? 'bg-[#1a2234] shadow-xl border-b border-white/5 py-2'
-                : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent pb-8 pt-2'
+            className={`fixed top-0 left-0 right-0 z-50 pointer-events-auto transition-colors duration-700 delay-75 ${isScrolled
+                ? 'bg-[#1a2234] shadow-xl py-0.5'
+                : 'bg-transparent pt-3 pb-1'
                 }`}
             onMouseLeave={() => setActiveDropdown(null)}
         >
             {/* Desktop Layout Wrapper */}
-            <div className={`max-w-[1920px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 flex items-center transition-all duration-300 ${isScrolled ? 'h-20 md:h-24' : 'h-28 md:h-36'}`}>
+            <div className={`max-w-[1920px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 flex items-center transition-all duration-700 ${isScrolled ? 'h-12 md:h-14' : 'h-20 md:h-28'}`}>
                 {/* Left Column: Logo */}
                 <div className="flex-shrink-0 flex items-center pr-10">
                     <img
                         src={isScrolled ? scrolledLogo : defaultLogo}
                         onError={(e) => { e.target.style.display = 'none' }}
                         alt="TIMA Logo"
-                        className={`w-auto object-contain mr-4 drop-shadow-md transition-all duration-300 ${isScrolled ? 'h-14 md:h-16' : 'h-24 md:h-[130px]'}`}
+                        className={`w-auto object-contain mr-4 drop-shadow-md transition-all duration-700 ${isScrolled ? 'h-12 md:h-16' : 'h-24 md:h-[140px]'}`}
                     />
                 </div>
 
@@ -206,6 +210,6 @@ export function Navbar() {
                     </div>
                 </div>
             )}
-        </nav>
+        </motion.nav>
     )
 }

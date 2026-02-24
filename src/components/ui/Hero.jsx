@@ -51,9 +51,9 @@ export function Hero() {
             {/* "Growth is Life" Headline + CTAs */}
             <div className="relative z-10 px-8 md:px-16 lg:px-24 xl:px-32 pb-32 lg:pb-40 flex-1 flex flex-col justify-end max-w-[1920px] mx-auto w-full">
                 <motion.h1
-                    initial={{ y: 50, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
                     className="text-6xl md:text-[110px] text-white drop-shadow-2xl leading-none tracking-tight"
                     style={{ fontFamily: "'Playfair Display', 'Georgia', serif", fontWeight: 400 }}
                 >
@@ -62,17 +62,17 @@ export function Hero() {
 
                 {/* Gold underline */}
                 <motion.div
-                    initial={{ y: 50, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                    transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
                     className="w-48 md:w-80 h-[2px] bg-[#dcb671] mt-6 mb-12"
                 />
 
                 {/* CTA Buttons - Reliance style (both white bg, dark text) */}
                 <motion.div
-                    initial={{ y: 50, opacity: 0 }}
+                    initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                    transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
                     className="flex flex-wrap gap-8"
                 >
                     <a
