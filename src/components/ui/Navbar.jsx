@@ -73,14 +73,14 @@ export function Navbar() {
             onMouseLeave={() => setActiveDropdown(null)}
         >
             {/* Desktop Layout Wrapper */}
-            <div className={`max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 flex items-center justify-between transition-all duration-700 ${isScrolled ? 'h-12 sm:h-14 md:h-16' : 'h-16 sm:h-20 md:h-28'}`}>
+            <div className={`max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 flex items-center justify-between transition-all duration-700 ${isScrolled ? 'h-12 sm:h-14 md:h-16' : 'h-16 sm:h-20 md:h-24 lg:h-28'}`}>
                 {/* Left Column: Logo */}
                 <div className="flex-shrink-0 flex items-center pr-4 sm:pr-6 md:pr-8 lg:pr-10">
                     <img
                         src={isScrolled ? scrolledLogo : defaultLogo}
                         onError={(e) => { e.target.style.display = 'none' }}
                         alt="TIMA Logo"
-                        className={`w-auto object-contain mr-2 sm:mr-3 md:mr-4 drop-shadow-md transition-all duration-700 ${isScrolled ? 'h-10 sm:h-12 md:h-14 lg:h-16' : 'h-14 sm:h-20 md:h-24 lg:h-[140px]'}`}
+                        className={`w-auto object-contain mr-2 sm:mr-3 md:mr-4 drop-shadow-md transition-all duration-700 ${isScrolled ? 'h-10 sm:h-12 md:h-14 lg:h-16' : 'h-12 sm:h-16 md:h-20 lg:h-[140px]'}`}
                     />
                 </div>
 

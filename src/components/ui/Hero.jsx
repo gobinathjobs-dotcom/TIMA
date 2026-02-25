@@ -49,12 +49,12 @@ export function Hero() {
             {/* removed flex-1 to center content better, or replaced with just pt */}
 
             {/* "Growth is Life" Headline + CTAs */}
-            <div className="relative z-10 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 pb-16 sm:pb-24 md:pb-32 lg:pb-40 flex-1 flex flex-col justify-end max-w-[1920px] mx-auto w-full">
+            <div className="relative z-10 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 pb-10 sm:pb-16 md:pb-24 lg:pb-40 flex-1 flex flex-col justify-end max-w-[1920px] mx-auto w-full">
                 <motion.h1
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[110px] text-white drop-shadow-2xl leading-tight tracking-tight"
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[110px] text-white drop-shadow-2xl leading-tight tracking-tight"
                     style={{ fontFamily: "'Playfair Display', 'Georgia', serif", fontWeight: 400 }}
                 >
                     Growth is Life
@@ -65,7 +65,7 @@ export function Hero() {
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
-                    className="w-32 sm:w-48 md:w-64 lg:w-80 h-[2px] bg-[#dcb671] mt-4 sm:mt-6 mb-8 sm:mb-12"
+                    className="w-24 sm:w-32 md:w-48 lg:w-64 xl:w-80 h-[2px] bg-[#dcb671] mt-3 sm:mt-4 md:mt-6 mb-6 sm:mb-8 md:mb-12"
                 />
 
                 {/* CTA Buttons - Reliance style (both white bg, dark text) */}
@@ -73,21 +73,21 @@ export function Hero() {
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
-                    className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-8"
+                    className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 md:gap-6 lg:gap-8"
                 >
                     <a
                         href="#about"
-                        className="group flex items-center justify-center gap-2 px-6 sm:px-8 md:px-12 py-3 sm:py-[10px] bg-transparent border border-white/70 rounded-[6px] text-white text-sm sm:text-base font-medium tracking-wide hover:bg-white hover:text-black hover:border-white transition-colors duration-300"
+                        className="group flex items-center justify-center gap-2 px-4 sm:px-6 md:px-10 lg:px-12 py-2.5 sm:py-3 md:py-[10px] bg-transparent border border-white/70 rounded-[6px] text-white text-xs sm:text-sm md:text-base font-medium tracking-wide hover:bg-white hover:text-black hover:border-white transition-colors duration-300"
                     >
                         <span>about us</span>
-                        <ArrowRight size={18} strokeWidth={1.5} className="group-hover:translate-x-0.5 transition-transform" />
+                        <ArrowRight size={16} strokeWidth={1.5} className="group-hover:translate-x-0.5 transition-transform hidden sm:inline" />
                     </a>
                     <a
                         href="#timeline"
-                        className="group flex items-center justify-center gap-2 px-6 sm:px-8 md:px-12 py-3 sm:py-[10px] bg-transparent border border-white/70 rounded-[6px] text-white text-sm sm:text-base font-medium tracking-wide hover:bg-white hover:text-black hover:border-white transition-colors duration-300"
+                        className="group flex items-center justify-center gap-2 px-4 sm:px-6 md:px-10 lg:px-12 py-2.5 sm:py-3 md:py-[10px] bg-transparent border border-white/70 rounded-[6px] text-white text-xs sm:text-sm md:text-base font-medium tracking-wide hover:bg-white hover:text-black hover:border-white transition-colors duration-300"
                     >
                         <span>our history</span>
-                        <ArrowRight size={18} strokeWidth={1.5} className="group-hover:translate-x-0.5 transition-transform" />
+                        <ArrowRight size={16} strokeWidth={1.5} className="group-hover:translate-x-0.5 transition-transform hidden sm:inline" />
                     </a>
                 </motion.div>
             </div>
