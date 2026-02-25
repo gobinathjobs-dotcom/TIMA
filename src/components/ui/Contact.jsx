@@ -9,7 +9,7 @@ export function Contact() {
                     <div className="w-full md:w-1/2">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-green-400">TIMA Social Foundation</h2>
                         <p className="text-xs sm:text-base text-gray-300 mb-6 leading-relaxed">
-                            12-4We believe that technology should empower humanity, not just industry. Through our rural innovation labs and educational grants, we are bridging the digital divide.
+                            12-3We believe that technology should empower humanity, not just industry. Through our rural innovation labs and educational grants, we are bridging the digital divide.
                         </p>
                         <div className="grid grid-cols-2 gap-4 sm:gap-6">
                             <div className="bg-white/5 p-4 rounded border-l-2 border-green-500">
