@@ -66,7 +66,7 @@ export function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 2.0, delay: 0.2, ease: "easeInOut" }}
             ref={navRef}
-            className={`fixed top-0 left-0 right-0 z-50 pointer-events-auto transition-colors duration-700 delay-75 ${isScrolled
+            className={`fixed top-0 left-0 right-2 z-50 pointer-events-auto transition-colors duration-700 delay-75 ${isScrolled
                 ? 'bg-[#1a2234] shadow-xl py-0.5'
                 : 'bg-transparent pt-3 pb-1'
                 }`}
