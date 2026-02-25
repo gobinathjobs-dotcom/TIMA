@@ -66,7 +66,7 @@ export function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 2.0, delay: 0.2, ease: "easeInOut" }}
             ref={navRef}
-            className={`fixed top-0 left-0 right-2 z-50 pointer-events-auto transition-colors duration-700 delay-75 ${isScrolled
+            className={`fixed top-0 left-0 right-0 z-50 pointer-events-auto transition-colors duration-700 delay-75 ${isScrolled
                 ? 'bg-[#1a2234] shadow-xl py-0.5'
                 : 'bg-transparent pt-3 pb-1'
                 }`}
@@ -80,12 +80,12 @@ export function Navbar() {
                         src={isScrolled ? scrolledLogo : defaultLogo}
                         onError={(e) => { e.target.style.display = 'none' }}
                         alt="TIMA Logo"
-                        className={`w-auto object-contain mr-2 sm:mr-3 md:mr-4 drop-shadow-md transition-all duration-700 ${isScrolled ? 'h-10 sm:h-12 md:h-14 xl:h-16' : 'h-12 sm:h-16 md:h-20 xl:h-[140px]'}`}
+                        className={`w-auto object-contain mr-2 sm:mr-3 md:mr-4 drop-shadow-md transition-all duration-700 ${isScrolled ? 'h-8 sm:h-10 md:h-12 xl:h-14' : 'h-10 sm:h-14 md:h-16 xl:h-[90px]'}`}
                     />
                 </div>
 
                 {/* Right Column: Rows */}
-                <div className="hidden xl:flex flex-col justify-center h-full ml-auto">
+                <div className="hidden xl:flex flex-col justify-center h-full flex-1 min-w-0">
                     {/* Top Row: Utilities - hidden when scrolled */}
                     {!isScrolled && (
                         <div className="flex justify-between items-center pt-3 pb-6 border-b border-white text-[12px] sm:text-[13px] text-white/95">
@@ -107,12 +107,12 @@ export function Navbar() {
 
                     {/* Bottom Row: Nav Links + Icons */}
                     <div className={`flex justify-between items-center ${isScrolled ? 'py-0' : 'pt-4'}`}>
-                        <div className="flex items-center gap-3 xl:gap-6 2xl:gap-8">
+                        <div className="flex items-center gap-3 xl:gap-4 2xl:gap-8">
                             {navLinks.map((link) => (
                                 <button
                                     key={link.label}
                                     onMouseEnter={() => setActiveDropdown(link.label)}
-                                    className={`flex items-center gap-2 text-[13px] xl:text-[16px] font-medium tracking-wide transition-colors ${activeDropdown === link.label
+                                    className={`flex items-center gap-1.5 text-[13px] xl:text-[14px] 2xl:text-[16px] font-medium tracking-wide whitespace-nowrap transition-colors ${activeDropdown === link.label
                                         ? 'text-white'
                                         : 'text-white/80 hover:text-white'
                                         }`}
@@ -125,7 +125,7 @@ export function Navbar() {
                                 </button>
                             ))}
                         </div>
-                        <div className={`flex items-center gap-3 xl:gap-5 ml-4 xl:ml-8 2xl:ml-16 text-white`}>
+                        <div className={`flex items-center gap-3 xl:gap-4 ml-4 xl:ml-6 2xl:ml-16 text-white`}>
                             <button className={'hover:text-white/70 transition-colors p-1'}>
                                 <Headphones size={18} strokeWidth={1.5} />
                             </button>

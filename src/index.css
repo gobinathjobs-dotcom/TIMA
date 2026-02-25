@@ -115,11 +115,13 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Overlay scrollbar so it doesn't eat into right-side padding */
+/* Styled scrollbar for cross-browser consistency */
 #main-scroll {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
-  overflow-y: overlay;
+  overflow-y: auto !important;
+  overflow-y: overlay !important;
+  /* Chrome/Edge overlay scrollbar — doesn't take up layout space */
 }
 
 #main-scroll::-webkit-scrollbar {
