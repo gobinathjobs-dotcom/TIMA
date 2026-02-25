@@ -73,7 +73,7 @@ export function Navbar() {
             onMouseLeave={() => setActiveDropdown(null)}
         >
             {/* Desktop Layout Wrapper */}
-            <div className={`max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 xl:px-16 2xl:px-24 3xl:px-32 flex items-center justify-between transition-all duration-700 ${isScrolled ? 'h-12 sm:h-14 md:h-16' : 'h-16 sm:h-20 md:h-24 xl:h-28'}`}>
+            <div className={`max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 xl:px-24 2xl:px-40 flex items-center justify-between transition-all duration-700 ${isScrolled ? 'h-12 sm:h-14 md:h-16' : 'h-16 sm:h-20 md:h-24 xl:h-28'}`}>
                 {/* Left Column: Logo */}
                 <div className="flex-shrink-0 flex items-center pr-4 sm:pr-6 md:pr-8 xl:pr-10">
                     <img

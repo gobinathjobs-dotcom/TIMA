@@ -101,7 +101,11 @@ body {
 
 /* Touch-friendly button sizes for mobile */
 @media (max-width: 768px) {
-  button, input, select, textarea {
+
+  button,
+  input,
+  select,
+  textarea {
     min-height: 44px;
   }
 }
@@ -109,4 +113,28 @@ body {
 /* Smooth scrolling and transitions */
 * {
   scroll-behavior: smooth;
+}
+
+/* Overlay scrollbar so it doesn't eat into right-side padding */
+#main-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+  overflow-y: overlay;
+}
+
+#main-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+#main-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#main-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+#main-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
