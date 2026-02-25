@@ -12,4 +12,16 @@ export default defineConfig({
       },
     }),
   ],
+
+  build: {
+    chunkSizeWarningLimit: 1000, // increase warning limit to 1MB
+
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+        },
+      },
+    },
+  },
 })
