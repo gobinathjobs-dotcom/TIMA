@@ -49,7 +49,7 @@ export function Hero() {
             {/* removed flex-1 to center content better, or replaced with just pt */}
 
             {/* "Growth is Life" Headline + CTAs */}
-            <div className="relative z-10 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 pb-6 sm:pb-10 md:pb-24 lg:pb-40 flex-1 flex flex-col justify-end max-w-[1920px] mx-auto w-full">
+            <div className="relative z-10 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-44 pb-6 sm:pb-10 md:pb-24 lg:pb-40 flex-1 flex flex-col justify-end max-w-[1920px] mx-auto w-full">
                 <motion.h1
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
