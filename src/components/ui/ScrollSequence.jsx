@@ -127,7 +127,7 @@ export function ScrollSequence() {
             <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
                 <GradientText
                     colors={['#5227FF', '#FF9FFC', '#B19EEF']}
-                    animationSpeed={1.5}
+                    animationSpeed={3.5}
                     showBorder={false}
                     className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl uppercase tracking-wider font-bold pointer-events-auto break-words text-center px-2 sm:px-4"
                 >
