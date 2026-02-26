@@ -105,7 +105,7 @@ export function Navbar() {
                         src={isScrolled ? scrolledLogo : defaultLogo}
                         onError={(e) => { e.target.style.display = 'none' }}
                         alt="TIMA Logo"
-                        className={`w-auto object-contain mr-2 sm:mr-3 md:mr-4 drop-shadow-md transition-all duration-700 ${isScrolled ? 'h-8 sm:h-10 md:h-12 xl:h-14' : 'h-10 sm:h-14 md:h-16 xl:h-[90px]'}`}
+                        className={`w-auto object-contain mr-2 sm:mr-3 md:mr-4 drop-shadow-md transition-all duration-700 ${isScrolled ? 'h-10 sm:h-12 md:h-14 xl:h-14' : 'h-14 sm:h-18 md:h-20 xl:h-[90px]'}`}
                     />
                 </div>
 
