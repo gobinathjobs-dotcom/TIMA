@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { ChevronDown, Search, Headphones, Sun, Moon, Menu, X } from 'lucide-react'
+import { ChevronDown, Headphones, Sun, Moon, Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useStore } from '../../stores/useStore'
@@ -100,7 +100,7 @@ export function Navbar() {
             {/* Desktop Layout Wrapper */}
             <div className={`max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 xl:px-24 2xl:px-40 flex items-center justify-between transition-all duration-700 ${isScrolled ? 'h-12 sm:h-14 md:h-16' : 'h-16 sm:h-20 md:h-24 xl:h-28'}`}>
                 {/* Left Column: Logo */}
-                <div className="flex-shrink-0 flex items-center pr-4 sm:pr-6 md:pr-8 xl:pr-10">
+                <div className="flex-shrink-0 flex items-center pr-4 sm:pr-6 md:pr-8 xl:pr-8 2xl:pr-12">
                     <img
                         src={isScrolled ? scrolledLogo : defaultLogo}
                         onError={(e) => { e.target.style.display = 'none' }}
@@ -110,7 +110,7 @@ export function Navbar() {
                 </div>
 
                 {/* Right Column: Rows */}
-                <div className="hidden xl:flex flex-col justify-center h-full flex-1 min-w-0">
+                <div className="hidden xl:flex flex-col justify-center h-full flex-1 min-w-0 xl:pl-2 2xl:pl-4">
                     {/* Top Row: Utilities - hidden when scrolled */}
                     {!isScrolled && (
                         <div className={`flex justify-between items-center pt-3 pb-6 border-b text-[12px] sm:text-[13px] ${theme === 'light' ? 'border-gray-300 text-gray-700' : 'border-white text-white/95'}`}>
@@ -165,9 +165,7 @@ export function Navbar() {
                             <button onClick={toggleTheme} className={'hover:text-white/70 transition-colors p-1 focus:outline-none'} title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}>
                                 {theme === 'dark' ? <Sun size={18} strokeWidth={1.5} /> : <Moon size={18} strokeWidth={1.5} />}
                             </button>
-                            <button className={'hover:text-white/70 transition-colors p-1'}>
-                                <Search size={18} strokeWidth={1.5} />
-                            </button>
+
                         </div>
                     </div>
                 </div>
