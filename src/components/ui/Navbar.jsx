@@ -145,12 +145,16 @@ export function Navbar() {
                                 <button
                                     key={link.label}
                                     onMouseEnter={() => setActiveDropdown(link.label)}
-                                    className={`flex items-center gap-1.5 text-[13px] xl:text-[14px] 2xl:text-[16px] font-medium tracking-wide whitespace-nowrap transition-colors ${activeDropdown === link.label
+                                    className={`relative group flex items-center gap-1.5 text-[13px] xl:text-[14px] 2xl:text-[16px] font-medium tracking-wide whitespace-nowrap transition-colors py-1 ${activeDropdown === link.label
                                         ? (theme === 'light' ? 'text-gray-900' : 'text-white')
                                         : (theme === 'light' ? 'text-gray-600 hover:text-gray-900' : 'text-white/80 hover:text-white')
                                         }`}
                                 >
-                                    {link.label}
+                                    <span className="relative pb-1">
+                                        {link.label}
+                                        {/* Animated Underline */}
+                                        <span className={`absolute left-0 bottom-0 h-[4px] bg-tima-gold transition-all duration-300 rounded-full ${activeDropdown === link.label ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                                    </span>
                                     <ChevronDown
                                         size={14}
                                         className={`transition-transform duration-200 ${activeDropdown === link.label ? 'rotate-180' : ''} ${theme === 'light' ? 'text-gray-400' : 'text-white/70'}`}
