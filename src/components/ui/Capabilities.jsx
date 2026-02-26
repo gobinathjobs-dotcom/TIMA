@@ -1,16 +1,14 @@
 import React from 'react'
+import { useStore } from '../../stores/useStore'
 
 const capabilities = ["Precision CNC", "Additive Manufacturing", "PCB Assembly", "Industrial AI", "Cloud IoT", "Embedded Systems"]
-const partners = [
-    { name: "Partner A", type: "Manufacturing" },
-    { name: "Partner B", type: "Technology" },
-    { name: "Partner C", type: "Logistics" },
-    { name: "Partner D", type: "Financial" },
-]
 
 export function Capabilities() {
+    const theme = useStore((state) => state.theme)
+    const light = theme === 'light'
+
     return (
-        <section className="py-12 sm:py-16 md:py-24 bg-tima-dark text-white">
+        <section className={`py-12 sm:py-16 md:py-24 ${light ? 'bg-gray-50 text-gray-900' : 'bg-tima-dark text-white'}`}>
             <div className="container mx-auto px-4 sm:px-6 md:px-8">
 
                 {/* Capabilities */}
@@ -24,17 +22,17 @@ export function Capabilities() {
                         ))}
                     </div>
                     <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                        <div className="bg-gray-900 p-6 sm:p-8 rounded-lg">
+                        <div className={`p-6 sm:p-8 rounded-lg ${light ? 'bg-white border border-gray-200 shadow-sm' : 'bg-gray-900'}`}>
                             <h3 className="text-lg sm:text-2xl font-bold mb-4">Manufacturing</h3>
-                            <ul className="space-y-2 text-xs sm:text-base text-gray-400">
+                            <ul className={`space-y-2 text-xs sm:text-base ${light ? 'text-gray-600' : 'text-gray-400'}`}>
                                 <li>• 500,000 sqft Production Floor</li>
                                 <li>• 6-Axis Robotic Arms Farm</li>
                                 <li>• ISO 9001:2015 Certified</li>
                             </ul>
                         </div>
-                        <div className="bg-gray-900 p-6 sm:p-8 rounded-lg">
+                        <div className={`p-6 sm:p-8 rounded-lg ${light ? 'bg-white border border-gray-200 shadow-sm' : 'bg-gray-900'}`}>
                             <h3 className="text-lg sm:text-2xl font-bold mb-4">Digital Systems</h3>
-                            <ul className="space-y-2 text-xs sm:text-base text-gray-400">
+                            <ul className={`space-y-2 text-xs sm:text-base ${light ? 'text-gray-600' : 'text-gray-400'}`}>
                                 <li>• Proprietary Neural Engine</li>
                                 <li>• Real-time Edge Analytics</li>
                                 <li>• Bank-grade Security Standard</li>
@@ -45,16 +43,13 @@ export function Capabilities() {
 
                 {/* Partners */}
                 <div>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-gray-200">Trusted By Global Partners</h2>
+                    <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center ${light ? 'text-gray-800' : 'text-gray-200'}`}>Trusted By Global Partners</h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 opacity-70 hover:opacity-100 transition-opacity">
-                        {/* Placeholder for Logos */}
-                        {[1, 2, 3, 4].map((i) => (
-                            <div key={i} className="h-20 sm:h-24 bg-white/10 rounded flex items-center justify-center text-gray-500 font-bold text-sm sm:text-lg md:text-xl uppercase tracking-widest hover:bg-white/20 transition-colors">
-                                Partner {i}
-                            </div>
-                        ))}
-                        {[5, 6, 7, 8].map((i) => (
-                            <div key={i} className="h-20 sm:h-24 bg-white/10 rounded flex items-center justify-center text-gray-500 font-bold text-sm sm:text-lg md:text-xl uppercase tracking-widest hover:bg-white/20 transition-colors">
+                        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                            <div key={i} className={`h-20 sm:h-24 rounded flex items-center justify-center font-bold text-sm sm:text-lg md:text-xl uppercase tracking-widest transition-colors ${light
+                                ? 'bg-gray-200 text-gray-500 hover:bg-gray-300'
+                                : 'bg-white/10 text-gray-500 hover:bg-white/20'
+                                }`}>
                                 Partner {i}
                             </div>
                         ))}

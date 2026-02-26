@@ -6,4 +6,7 @@ export const useStore = create((set) => ({
 
     isKronosActive: false,
     setKronosActive: (active) => set({ isKronosActive: active }),
+
+    theme: 'dark', // 'dark' | 'light'
+    toggleTheme: () => set((state) => ({ theme: state.theme === 'dark' ? 'light' : 'dark' })),
 }))
