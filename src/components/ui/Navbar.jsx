@@ -9,7 +9,7 @@ import scrolledLogo from '../../assets/Logo1.png'
 const navLinks = [
     {
         label: 'About',
-        items: ['Overview', 'Leadership', 'Board of Directors', 'Corporate Governance']
+        items: ['Overview', 'Board of Directors', 'Corporate Governance']
     },
     {
         label: 'Businesses',
@@ -40,6 +40,7 @@ export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
     const navRef = useRef(null)
     const { theme, toggleTheme } = useStore()
+    const activeTheme = isScrolled ? theme : 'dark'
 
     useEffect(() => {
         const main = document.getElementById('main-scroll')
@@ -70,8 +71,8 @@ export function Navbar() {
             transition={{ duration: 2.0, delay: 0.2, ease: "easeInOut" }}
             ref={navRef}
             className={`fixed top-0 left-0 right-[10px] z-50 pointer-events-auto transition-all duration-700 delay-75 ${isScrolled
-                ? (theme === 'light' ? 'bg-white/90 backdrop-blur-md py-0.5 text-gray-900' : 'bg-[#1a2234]/85 backdrop-blur-md py-0.5')
-                : (theme === 'light' ? 'bg-transparent pt-3 pb-1 text-gray-900' : 'bg-transparent xl:bg-gradient-to-b xl:from-black/70 xl:via-black/70 xl:to-transparent pt-3 pb-1 xl:pb-16')
+                ? (activeTheme === 'light' ? 'bg-white/90 backdrop-blur-md py-0.5 text-gray-900' : 'bg-[#1a2234]/85 backdrop-blur-md py-0.5')
+                : (activeTheme === 'light' ? 'bg-transparent pt-3 pb-1 text-gray-900' : 'bg-transparent xl:bg-gradient-to-b xl:from-black/70 xl:via-black/70 xl:to-transparent pt-3 pb-1 xl:pb-16')
                 }`}
             onMouseLeave={() => setActiveDropdown(null)}
         >
@@ -79,7 +80,7 @@ export function Navbar() {
 
             {/* Scrolling Marquee Banner — mobile/tablet only, hidden on xl desktop */}
             {!isScrolled && (
-                <div className={`xl:hidden overflow-hidden py-2 text-[11px] sm:text-[12px] md:text-[13px] ${theme === 'light' ? 'text-gray-600' : 'text-white/90'}`}>
+                <div className={`xl:hidden overflow-hidden py-2 text-[11px] sm:text-[12px] md:text-[13px] ${activeTheme === 'light' ? 'text-gray-600' : 'text-white/90'}`}>
                     <div className="marquee-scroll whitespace-nowrap font-medium tracking-wide">
                         <span className="inline-block">
                             <span className="px-10 sm:px-12">hello every one</span>
@@ -113,7 +114,7 @@ export function Navbar() {
                 <div className="hidden xl:flex flex-col justify-center h-full flex-1 min-w-0 xl:pl-2 2xl:pl-4">
                     {/* Top Row: Utilities - hidden when scrolled */}
                     {!isScrolled && (
-                        <div className={`flex justify-between items-center pt-3 pb-6 border-b text-[12px] sm:text-[13px] ${theme === 'light' ? 'border-gray-300 text-gray-700' : 'border-white text-white/95'}`}>
+                        <div className={`flex justify-between items-center pt-3 pb-6 border-b text-[12px] sm:text-[13px] ${activeTheme === 'light' ? 'border-gray-300 text-gray-700' : 'border-white text-white/95'}`}>
                             <div className="flex-1 overflow-hidden mr-6">
                                 <div className="marquee-scroll whitespace-nowrap font-medium tracking-wide">
                                     <span className="inline-block">
@@ -131,9 +132,9 @@ export function Navbar() {
                                 </div>
                             </div>
                             <div className="flex items-center gap-4 sm:gap-6 font-medium flex-shrink-0">
-                                <a href="#" className={`flex items-center gap-1 transition-colors ${theme === 'light' ? 'hover:text-gray-400' : 'hover:text-white/70'}`}>eB2B <ChevronDown size={14} className="inline" /></a>
-                                <a href="#" className={`transition-colors ${theme === 'light' ? 'hover:text-gray-400' : 'hover:text-white/70'}`}>Fraud Alert</a>
-                                <a href="#" className={`transition-colors ${theme === 'light' ? 'hover:text-gray-400' : 'hover:text-white/70'}`}>Contact Us</a>
+                                <a href="#" className={`flex items-center gap-1 transition-colors ${activeTheme === 'light' ? 'hover:text-gray-400' : 'hover:text-white/70'}`}>eB2B <ChevronDown size={14} className="inline" /></a>
+                                <a href="#" className={`transition-colors ${activeTheme === 'light' ? 'hover:text-gray-400' : 'hover:text-white/70'}`}>Fraud Alert</a>
+                                <a href="#" className={`transition-colors ${activeTheme === 'light' ? 'hover:text-gray-400' : 'hover:text-white/70'}`}>Contact Us</a>
                             </div>
                         </div>
                     )}
@@ -146,8 +147,8 @@ export function Navbar() {
                                     key={link.label}
                                     onMouseEnter={() => setActiveDropdown(link.label)}
                                     className={`relative group flex items-center gap-1.5 text-[13px] xl:text-[14px] 2xl:text-[16px] font-medium tracking-wide whitespace-nowrap transition-colors py-1 ${activeDropdown === link.label
-                                        ? (theme === 'light' ? 'text-gray-900' : 'text-white')
-                                        : (theme === 'light' ? 'text-gray-600 hover:text-gray-900' : 'text-white/80 hover:text-white')
+                                        ? (activeTheme === 'light' ? 'text-gray-900' : 'text-white')
+                                        : (activeTheme === 'light' ? 'text-gray-600 hover:text-gray-900' : 'text-white/80 hover:text-white')
                                         }`}
                                 >
                                     <span className="relative pb-1">
@@ -157,12 +158,12 @@ export function Navbar() {
                                     </span>
                                     <ChevronDown
                                         size={14}
-                                        className={`transition-transform duration-200 ${activeDropdown === link.label ? 'rotate-180' : ''} ${theme === 'light' ? 'text-gray-400' : 'text-white/70'}`}
+                                        className={`transition-transform duration-200 ${activeDropdown === link.label ? 'rotate-180' : ''} ${activeTheme === 'light' ? 'text-gray-400' : 'text-white/70'}`}
                                     />
                                 </button>
                             ))}
                         </div>
-                        <div className={`flex items-center gap-3 xl:gap-4 ml-4 xl:ml-6 2xl:ml-16 ${theme === 'light' ? 'text-gray-700' : 'text-white'}`}>
+                        <div className={`flex items-center gap-3 xl:gap-4 ml-4 xl:ml-6 2xl:ml-16 ${activeTheme === 'light' ? 'text-gray-700' : 'text-white'}`}>
                             <button className={'hover:text-white/70 transition-colors p-1'}>
                                 <Headphones size={18} strokeWidth={1.5} />
                             </button>
@@ -176,7 +177,7 @@ export function Navbar() {
 
                 {/* Mobile menu toggle */}
                 <button
-                    className={`xl:hidden p-2 ml-auto self-center transition-colors ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}
+                    className={`xl:hidden p-2 ml-auto self-center transition-colors ${activeTheme === 'light' ? 'text-gray-900' : 'text-white'}`}
                     onClick={() => { setMobileOpen(!mobileOpen); setMobileExpanded(null) }}
                 >
                     {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -219,7 +220,7 @@ export function Navbar() {
 
             {/* Mobile menu */}
             {mobileOpen && (
-                <div className={`xl:hidden border-t px-4 sm:px-6 py-4 max-h-[70vh] overflow-y-auto ${theme === 'light' ? 'bg-white border-gray-200' : 'bg-[#1a2234] border-white/10'}`}>
+                <div className={`xl:hidden border-t px-4 sm:px-6 py-4 max-h-[70vh] overflow-y-auto ${activeTheme === 'light' ? 'bg-white border-gray-200' : 'bg-[#1a2234] border-white/10'}`}>
                     {navLinks.map((link) => (
                         <div key={link.label}>
                             <button
