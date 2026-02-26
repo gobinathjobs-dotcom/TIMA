@@ -71,7 +71,7 @@ export function Navbar() {
             ref={navRef}
             className={`fixed top-0 left-0 right-[10px] z-50 pointer-events-auto transition-all duration-700 delay-75 ${isScrolled
                 ? (theme === 'light' ? 'bg-white/90 backdrop-blur-md py-0.5 text-gray-900' : 'bg-[#1a2234]/85 backdrop-blur-md py-0.5')
-                : (theme === 'light' ? 'bg-transparent pt-3 pb-1 text-gray-900' : 'bg-transparent pt-3 pb-1')
+                : (theme === 'light' ? 'bg-transparent pt-3 pb-1 text-gray-900' : 'bg-transparent xl:bg-gradient-to-b xl:from-black/70 xl:via-black/70 xl:to-transparent pt-3 pb-1 xl:pb-16')
                 }`}
             onMouseLeave={() => setActiveDropdown(null)}
         >
