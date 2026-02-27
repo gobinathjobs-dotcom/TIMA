@@ -1,30 +1,66 @@
 import React from 'react';
-import treeImage from '../../assets/SJF-F.011441.jpg';
+import videoSrc from '../../assets/Photo_To_High_Quality_Video.mp4';
 
 export function TechNeural() {
     return (
-        <section className="py-12 md:py-20 w-full flex flex-col items-center justify-center px-4 bg-[#FDF6E9]">
-            <div className="max-w-[1920px] mx-auto flex flex-col items-center">
+        <section className="relative w-full min-h-[15vh] md:min-h-[25vh] flex flex-col items-center justify-center bg-[#050505] overflow-hidden py-2 z-0">
+            {/* Very faint background texture to give it a premium feel */}
+            <div className="absolute inset-0 opacity-[0.1] pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")' }} />
 
-                <h2
-                    className="text-center font-black uppercase flex flex-wrap justify-center gap-x-3 md:gap-x-6 gap-y-1 bg-clip-text text-transparent bg-cover bg-center"
-                    style={{
-                        fontSize: 'clamp(2.5rem, 8vw, 120px)',
-                        lineHeight: '0.9',
-                        letterSpacing: '0.05em',
-                        fontFamily: 'Impact, "Arial Black", sans-serif',
-                        backgroundImage: `url(${treeImage})`,
-                        backgroundSize: '200% auto',
-                        animation: 'panBackground 25s ease-in-out infinite',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                    }}
-                >
-                    <span>TECH</span>
-                    <span>NEURAL</span>
-                    <span>HANDSHAKE</span>
-                </h2>
+            <div className="relative w-full max-w-[1920px] mx-auto flex flex-col items-center z-10 px-4 md:px-8">
 
+                {/* SVG for clipping the video and drawing the 3D stroke/shadow */}
+                <svg viewBox="0 20 1000 240" className="w-full h-auto max-w-[1000px]" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <mask id="videoMask">
+                            <rect width="100%" height="100%" fill="black" />
+                            <text x="50%" y="120" textAnchor="middle" fill="white" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em">GREEN</text>
+                            <text x="50%" y="230" textAnchor="middle" fill="white" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em">SPHERE</text>
+                        </mask>
+                        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+                        </filter>
+                    </defs>
+
+                    {/* 1. Soft Black Drop Shadow */}
+                    <g transform="translate(6, 6)">
+                        <text x="50%" y="120" textAnchor="middle" fill="rgba(0,0,0,0.8)" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em" filter="url(#softShadow)">GREEN</text>
+                        <text x="50%" y="230" textAnchor="middle" fill="rgba(0,0,0,0.8)" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em" filter="url(#softShadow)">SPHERE</text>
+                    </g>
+
+                    {/* 2. Deep Gold Extrusion */}
+                    <g transform="translate(4, 4)">
+                        <text x="50%" y="120" textAnchor="middle" fill="#8A681B" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em">GREEN</text>
+                        <text x="50%" y="230" textAnchor="middle" fill="#8A681B" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em">SPHERE</text>
+                    </g>
+
+                    {/* 3. Mid Gold Extrusion */}
+                    <g transform="translate(3, 3)">
+                        <text x="50%" y="120" textAnchor="middle" fill="#B88E2F" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em">GREEN</text>
+                        <text x="50%" y="230" textAnchor="middle" fill="#B88E2F" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em">SPHERE</text>
+                    </g>
+
+                    {/* 4. Top Gold Extrusion */}
+                    <g transform="translate(1, 1)">
+                        <text x="50%" y="120" textAnchor="middle" fill="#D4AF37" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em">GREEN</text>
+                        <text x="50%" y="230" textAnchor="middle" fill="#D4AF37" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em">SPHERE</text>
+                    </g>
+
+                    {/* 5. The Video Layer */}
+                    <foreignObject x="0" y="0" width="100%" height="100%" mask="url(#videoMask)">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style={{ width: '100%', height: '100%' }}>
+                            <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+                                <source src={videoSrc} type="video/mp4" />
+                            </video>
+                        </div>
+                    </foreignObject>
+
+                    {/* 6. Gold Stroke Envelope */}
+                    <g>
+                        <text x="50%" y="120" textAnchor="middle" fill="transparent" stroke="#FFDF73" strokeWidth="2" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em">GREEN</text>
+                        <text x="50%" y="230" textAnchor="middle" fill="transparent" stroke="#FFDF73" strokeWidth="2" fontSize="110" fontWeight="900" fontFamily='Impact, "Arial Black", sans-serif' letterSpacing="0.05em">SPHERE</text>
+                    </g>
+                </svg>
             </div>
         </section>
     );
