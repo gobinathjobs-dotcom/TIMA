@@ -12,6 +12,20 @@ export default defineConfig({
     }),
   ],
 
+  server: {
+    proxy: {
+      '/spline-proxy': {
+        target: 'https://prod.spline.design',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/spline-proxy/, ''),
+        headers: {
+          'Origin': 'https://my.spline.design',
+          'Referer': 'https://my.spline.design/'
+        }
+      }
+    }
+  },
+
   build: {
     chunkSizeWarningLimit: 1000,
 

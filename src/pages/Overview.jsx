@@ -10,7 +10,7 @@ export function Overview() {
     const light = theme === 'light'
 
     return (
-        <div className={`relative w-full min-h-screen transition-colors duration-500 ${light ? 'bg-white text-gray-900' : 'bg-tima-dark text-tima-white'}`}>
+        <div className={`relative w-full min-h-screen transition-colors duration-500 ${light ? 'bg-transparent text-gray-900' : 'bg-transparent text-tima-white'}`}>
             {/* Navbar */}
             <Navbar />
 

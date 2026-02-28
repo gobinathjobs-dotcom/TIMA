@@ -1,23 +1,22 @@
 import React from 'react'
 import { Layout } from '../components/layout/Layout'
 import { Hero } from '../components/ui/Hero'
-import { TechNeural } from '../components/ui/TechNeural'
-import { Corporate } from '../components/ui/Corporate'
-import { Timeline } from '../components/ui/Timeline'
-import { Future } from '../components/ui/Future'
-import { Capabilities } from '../components/ui/Capabilities'
-import { Contact } from '../components/ui/Contact'
+
 
 export function Home() {
     return (
         <Layout>
             <Hero />
-            <TechNeural />
-            <Corporate />
-            <Timeline />
-            <Future />
-            <Capabilities />
-            <Contact />
+
+            {/* Test Page 1 */}
+            <div className="w-full h-screen bg-transparent flex items-center justify-center border-t border-white/10">
+                <h2 className="text-4xl font-bold text-white tracking-widest drop-shadow-lg">TEST PAGE 1</h2>
+            </div>
+
+            {/* Test Page 2 */}
+            <div className="w-full h-screen bg-transparent flex items-center justify-center border-t border-white/10">
+                <h2 className="text-4xl font-bold text-white tracking-widest drop-shadow-lg">TEST PAGE 2</h2>
+            </div>
         </Layout>
     )
 }

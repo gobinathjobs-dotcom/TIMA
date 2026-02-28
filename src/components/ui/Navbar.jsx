@@ -9,15 +9,15 @@ import scrolledLogo from '../../assets/Logo1.png'
 const navLinks = [
     {
         label: 'About',
-        items: ['Overview', 'Board of Directors', 'Corporate Governance']
+        items: ['Overview', 'Board of Directors', 'Timeline']
     },
     {
         label: 'Businesses',
-        items: ['Manufacturing', 'Digital Solutions', 'Industrial Automation', 'IoT & Edge Computing']
+        items: ['names need to be given by manos']
     },
     {
-        label: 'Sustainability',
-        items: ['ESG Framework', 'Environment', 'Social Impact', 'Reports & Disclosures']
+        label: 'Partners',
+        items: ['Who to handshake']
     },
     {
         label: 'Investors',
@@ -83,16 +83,16 @@ export function Navbar() {
                 <div className={`xl:hidden overflow-hidden py-2 text-[11px] sm:text-[12px] md:text-[13px] ${activeTheme === 'light' ? 'text-gray-600' : 'text-white/90'}`}>
                     <div className="marquee-scroll whitespace-nowrap font-medium tracking-wide">
                         <span className="inline-block">
-                            <span className="px-10 sm:px-12">hello every one</span>
-                            <span className="px-10 sm:px-12">hello every one</span>
-                            <span className="px-10 sm:px-12">hello every one</span>
-                            <span className="px-10 sm:px-12">hello every one</span>
+                            <span className="px-10 sm:px-12">Together we Raise, Together we Thrive.</span>
+                            <span className="px-10 sm:px-12">Together we Raise, Together we Thrive.</span>
+                            <span className="px-10 sm:px-12">Together we Raise, Together we Thrive.</span>
+                            <span className="px-10 sm:px-12">Together we Raise, Together we Thrive.</span>
                         </span>
                         <span className="inline-block">
-                            <span className="px-10 sm:px-12">hello every one</span>
-                            <span className="px-10 sm:px-12">hello every one</span>
-                            <span className="px-10 sm:px-12">hello every one</span>
-                            <span className="px-10 sm:px-12">hello every one</span>
+                            <span className="px-10 sm:px-12">Together we Raise, Together we Thrive.</span>
+                            <span className="px-10 sm:px-12">Together we Raise, Together we Thrive.</span>
+                            <span className="px-10 sm:px-12">Together we Raise, Together we Thrive.</span>
+                            <span className="px-10 sm:px-12">Together we Raise, Together we Thrive.</span>
                         </span>
                     </div>
                 </div>
@@ -118,23 +118,21 @@ export function Navbar() {
                             <div className="flex-1 overflow-hidden mr-6">
                                 <div className="marquee-scroll whitespace-nowrap font-medium tracking-wide">
                                     <span className="inline-block">
-                                        <span className="px-12">hello every one</span>
-                                        <span className="px-12">hello every one</span>
-                                        <span className="px-12">hello every one</span>
-                                        <span className="px-12">hello every one</span>
+                                        <span className="px-12">Together we Raise, Together we Thrive.</span>
+                                        <span className="px-12">Together we Raise, Together we Thrive.</span>
+                                        <span className="px-12">Together we Raise, Together we Thrive.</span>
+                                        <span className="px-12">Together we Raise, Together we Thrive.</span>
                                     </span>
                                     <span className="inline-block">
-                                        <span className="px-12">hello every one</span>
-                                        <span className="px-12">hello every one</span>
-                                        <span className="px-12">hello every one</span>
-                                        <span className="px-12">hello every one</span>
+                                        <span className="px-12">Together we Raise, Together we Thrive.</span>
+                                        <span className="px-12">Together we Raise, Together we Thrive.</span>
+                                        <span className="px-12">Together we Raise, Together we Thrive.</span>
+                                        <span className="px-12">Together we Raise, Together we Thrive.</span>
                                     </span>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4 sm:gap-6 font-medium flex-shrink-0">
-                                <a href="#" className={`flex items-center gap-1 transition-colors ${activeTheme === 'light' ? 'hover:text-gray-400' : 'hover:text-white/70'}`}>eB2B <ChevronDown size={14} className="inline" /></a>
-                                <a href="#" className={`transition-colors ${activeTheme === 'light' ? 'hover:text-gray-400' : 'hover:text-white/70'}`}>Fraud Alert</a>
-                                <a href="#" className={`transition-colors ${activeTheme === 'light' ? 'hover:text-gray-400' : 'hover:text-white/70'}`}>Contact Us</a>
+                                <a href="#" className={`transition-colors ${activeTheme === 'light' ? 'hover:text-gray-400' : 'hover:text-white/70'}`}>Sign Up for New</a>
                             </div>
                         </div>
                     )}
@@ -262,9 +260,7 @@ export function Navbar() {
                         </div>
                     ))}
                     <div className="flex gap-4 pt-4 text-xs text-white/60">
-                        <a href="#" className="hover:text-tima-gold">eB2B</a>
-                        <a href="#" className="hover:text-tima-gold">Fraud Alert</a>
-                        <a href="#" className="hover:text-tima-gold">Contact Us</a>
+                        <a href="#" className="hover:text-tima-gold">Sign Up for New</a>
                     </div>
                 </div>
             )}

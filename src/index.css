@@ -151,3 +151,13 @@ body {
   scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
   overflow-y: scroll !important;
 }
+
+/* Hide Spline Logo */
+.hide-spline-logo a,
+#spline-container a[href*="spline.design"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+  visibility: hidden !important;
+}
